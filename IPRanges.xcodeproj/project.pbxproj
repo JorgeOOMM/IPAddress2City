@@ -47,7 +47,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		042E87502EEA562E0084B3F8 /* Exceptions for "IPRanges" folder in "Converter" target */ = {
+		042E87502EEA562E0084B3F8 /* Exceptions for "Sources" folder in "Converter" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"IPRanges/Array+Data.swift",
@@ -60,6 +60,7 @@
 				IPRanges/LineReader.swift,
 				IPRanges/Model.swift,
 				"IPRanges/String+Slice.swift",
+				"IPRanges/Test+Time.swift",
 			);
 			target = 042E87472EEA56000084B3F8 /* Converter */;
 		};
@@ -71,12 +72,12 @@
 			path = Converter;
 			sourceTree = "<group>";
 		};
-		04F49B802EE7425E005D2F21 /* IPRanges */ = {
+		04F49B802EE7425E005D2F21 /* Sources */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				042E87502EEA562E0084B3F8 /* Exceptions for "IPRanges" folder in "Converter" target */,
+				042E87502EEA562E0084B3F8 /* Exceptions for "Sources" folder in "Converter" target */,
 			);
-			path = IPRanges;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		04F49B912EE74260005D2F21 /* IPRangesTests */ = {
@@ -127,7 +128,7 @@
 		04F49B752EE7425E005D2F21 = {
 			isa = PBXGroup;
 			children = (
-				04F49B802EE7425E005D2F21 /* IPRanges */,
+				04F49B802EE7425E005D2F21 /* Sources */,
 				04F49B912EE74260005D2F21 /* IPRangesTests */,
 				04F49B9B2EE74260005D2F21 /* IPRangesUITests */,
 				042E87492EEA56000084B3F8 /* Converter */,
@@ -179,13 +180,14 @@
 				04F49B7A2EE7425E005D2F21 /* Sources */,
 				04F49B7B2EE7425E005D2F21 /* Frameworks */,
 				04F49B7C2EE7425E005D2F21 /* Resources */,
+				0460E93B2EEBAB440093C29E /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				04F49B802EE7425E005D2F21 /* IPRanges */,
+				04F49B802EE7425E005D2F21 /* Sources */,
 			);
 			name = IPRanges;
 			packageProductDependencies = (
@@ -315,6 +317,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0460E93B2EEBAB440093C29E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]\nthen\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif command -v swiftlint >/dev/null 2>&1\nthen\n    swiftlint\nelse\n    echo \"warning: `swiftlint` command not found - See https://github.com/realm/SwiftLint#installation for installation instructions.\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		042E87442EEA56000084B3F8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -423,7 +446,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -486,7 +509,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -512,7 +535,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"IPRanges/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Sources/Preview Content\"";
 				DEVELOPMENT_TEAM = 9LCWBZHZFL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -541,7 +564,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"IPRanges/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Sources/Preview Content\"";
 				DEVELOPMENT_TEAM = 9LCWBZHZFL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

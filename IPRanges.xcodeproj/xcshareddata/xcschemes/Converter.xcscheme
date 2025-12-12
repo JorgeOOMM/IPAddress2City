@@ -57,7 +57,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "&quot;/Users/mac/Library/Developer/Xcode/DerivedData/IPRanges-cfebszbictzbuifonpasdbmotyxb/Build/Products/Debug/Data/IP-COUNTRY.7z&quot;"
+            argument = "&quot;/Users/mac/Library/Developer/Xcode/DerivedData/IPRanges-cfebszbictzbuifonpasdbmotyxb/Build/Products/Debug/IP-COUNTRY.7z&quot;"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
