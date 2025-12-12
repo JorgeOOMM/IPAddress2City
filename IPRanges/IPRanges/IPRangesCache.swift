@@ -14,7 +14,8 @@ enum CustomError: Error {
 
 class IPRangesCache {
     typealias Handler = (Result<IPRange, Error>) -> Void
-    private let ranges = IPRanges()
+    // TODO: ranges: LocationProtocol
+    private let ranges = IPRanges(locator: IPRangesBinaryFileReader())
     // Don't limit the lifetime of the cache entries
     private lazy var cache = Cache<String, IPRange>(dateProvider: nil)
     let cacheName: String = "cache.ip.ranges"
@@ -34,7 +35,7 @@ class IPRangesCache {
             return cached
         }
         if let ipBigEndian = ranges.stringToInt(address),
-           let location = ranges.intToLocation(beIP: UInt32(bigEndian: ipBigEndian)) {
+           let location = ranges.location(from: UInt32(bigEndian: ipBigEndian)) {
             self.cache[address] = location
             return location
         }
@@ -47,7 +48,7 @@ class IPRangesCache {
             handler(.failure(CustomError.conversionError))
             return
         }
-        guard let location = ranges.intToLocation(beIP: UInt32(bigEndian: beAddress)) else {
+        guard let location = ranges.location(from: UInt32(bigEndian: beAddress)) else {
             handler(.failure(CustomError.locationError))
             return
         }

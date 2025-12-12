@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0460E8AF2EEB3CEF0093C29E /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 0460E8AE2EEB3CEF0093C29E /* ArgumentParser */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		04F49B8F2EE74260005D2F21 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -36,39 +40,41 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		042E87482EEA56000084B3F8 /* Conversion */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Conversion; sourceTree = BUILT_PRODUCTS_DIR; };
+		042E87482EEA56000084B3F8 /* Converter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Converter; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F49B7E2EE7425E005D2F21 /* IPRanges.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IPRanges.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F49B8E2EE74260005D2F21 /* IPRangesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IPRangesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F49B982EE74260005D2F21 /* IPRangesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IPRangesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		042E87502EEA562E0084B3F8 /* Exceptions for "IPRanges" folder in "Conversion" target */ = {
+		042E87502EEA562E0084B3F8 /* Exceptions for "IPRanges" folder in "Converter" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"IPRanges/Array+Data.swift",
 				IPRanges/Compressor.swift,
 				IPRanges/Countries.swift,
-				IPRanges/IPRangesConversor.swift,
+				IPRanges/DataFile.swift,
+				"IPRanges/FileManager+Extension.swift",
+				IPRanges/IPRangesConverter.swift,
 				IPRanges/IPRangesTextFileLineLoader.swift,
 				IPRanges/LineReader.swift,
 				IPRanges/Model.swift,
 				"IPRanges/String+Slice.swift",
 			);
-			target = 042E87472EEA56000084B3F8 /* Conversion */;
+			target = 042E87472EEA56000084B3F8 /* Converter */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		042E87492EEA56000084B3F8 /* Conversion */ = {
+		042E87492EEA56000084B3F8 /* Converter */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Conversion;
+			path = Converter;
 			sourceTree = "<group>";
 		};
 		04F49B802EE7425E005D2F21 /* IPRanges */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				042E87502EEA562E0084B3F8 /* Exceptions for "IPRanges" folder in "Conversion" target */,
+				042E87502EEA562E0084B3F8 /* Exceptions for "IPRanges" folder in "Converter" target */,
 			);
 			path = IPRanges;
 			sourceTree = "<group>";
@@ -90,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0460E8AF2EEB3CEF0093C29E /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,7 +130,7 @@
 				04F49B802EE7425E005D2F21 /* IPRanges */,
 				04F49B912EE74260005D2F21 /* IPRangesTests */,
 				04F49B9B2EE74260005D2F21 /* IPRangesUITests */,
-				042E87492EEA56000084B3F8 /* Conversion */,
+				042E87492EEA56000084B3F8 /* Converter */,
 				04F49B7F2EE7425E005D2F21 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -134,7 +141,7 @@
 				04F49B7E2EE7425E005D2F21 /* IPRanges.app */,
 				04F49B8E2EE74260005D2F21 /* IPRangesTests.xctest */,
 				04F49B982EE74260005D2F21 /* IPRangesUITests.xctest */,
-				042E87482EEA56000084B3F8 /* Conversion */,
+				042E87482EEA56000084B3F8 /* Converter */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -142,9 +149,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		042E87472EEA56000084B3F8 /* Conversion */ = {
+		042E87472EEA56000084B3F8 /* Converter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 042E874C2EEA56000084B3F8 /* Build configuration list for PBXNativeTarget "Conversion" */;
+			buildConfigurationList = 042E874C2EEA56000084B3F8 /* Build configuration list for PBXNativeTarget "Converter" */;
 			buildPhases = (
 				042E87442EEA56000084B3F8 /* Sources */,
 				042E87452EEA56000084B3F8 /* Frameworks */,
@@ -155,13 +162,14 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				042E87492EEA56000084B3F8 /* Conversion */,
+				042E87492EEA56000084B3F8 /* Converter */,
 			);
-			name = Conversion;
+			name = Converter;
 			packageProductDependencies = (
+				0460E8AE2EEB3CEF0093C29E /* ArgumentParser */,
 			);
 			productName = Conversion;
-			productReference = 042E87482EEA56000084B3F8 /* Conversion */;
+			productReference = 042E87482EEA56000084B3F8 /* Converter */;
 			productType = "com.apple.product-type.tool";
 		};
 		04F49B7D2EE7425E005D2F21 /* IPRanges */ = {
@@ -268,6 +276,7 @@
 			mainGroup = 04F49B752EE7425E005D2F21;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				0460E8AD2EEB3CEF0093C29E /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 04F49B7F2EE7425E005D2F21 /* Products */;
@@ -277,7 +286,7 @@
 				04F49B7D2EE7425E005D2F21 /* IPRanges */,
 				04F49B8D2EE74260005D2F21 /* IPRangesTests */,
 				04F49B972EE74260005D2F21 /* IPRangesUITests */,
-				042E87472EEA56000084B3F8 /* Conversion */,
+				042E87472EEA56000084B3F8 /* Converter */,
 			);
 		};
 /* End PBXProject section */
@@ -629,7 +638,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		042E874C2EEA56000084B3F8 /* Build configuration list for PBXNativeTarget "Conversion" */ = {
+		042E874C2EEA56000084B3F8 /* Build configuration list for PBXNativeTarget "Converter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				042E874D2EEA56000084B3F8 /* Debug */,
@@ -675,6 +684,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0460E8AD2EEB3CEF0093C29E /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.6.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0460E8AE2EEB3CEF0093C29E /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0460E8AD2EEB3CEF0093C29E /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 04F49B762EE7425E005D2F21 /* Project object */;
 }

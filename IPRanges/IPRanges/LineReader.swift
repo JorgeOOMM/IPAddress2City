@@ -10,7 +10,7 @@ import Foundation
 /*
  Read text file line by line in efficient way
 
-guard let reader = LineReader(path: "/Path/to/file.txt") else {
+guard let reader = LineReader(from: "/Path/to/file.txt") else {
     return; // cannot open file
 }
 
@@ -25,7 +25,7 @@ public class LineReader {
    public let path: String
    fileprivate let file: UnsafeMutablePointer<FILE>!
 
-   init?(path: String) {
+   init?(from path: String) {
       self.path = path
       file = fopen(path, "r")
       guard file != nil else { return nil }
@@ -47,7 +47,9 @@ public class LineReader {
 extension LineReader: Sequence {
    public func makeIterator() -> AnyIterator<String> {
       return AnyIterator<String> {
-          return self.nextLine?.replacingOccurrences(of: "\r\n", with: "")
+          //self.trimmingCharacters(in: .whitespacesAndNewlines)
+          //return self.nextLine?.replacingOccurrences(of: "\r\n", with: "")
+          return self.nextLine
       }
    }
 }
