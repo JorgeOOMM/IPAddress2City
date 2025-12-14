@@ -22,18 +22,3 @@ extension IPStringRangeIterator: IteratorProtocol {
         return index < self.collection.range.count ? collection.range[index] : nil
     }
 }
-
-// MARK: IPStringRangeCollection
-class IPStringRangeCollection {
-    fileprivate lazy var range = [String]()
-    
-    init(lower: String, upper: String, ranger: IPAddressGenerator = IPAddressRange()) {
-        self.range = ranger.range(lower: lower, upper: upper)
-    }
-}
-// MARK: IPStringRangeCollection: Sequence
-extension IPStringRangeCollection: Sequence {
-    public func makeIterator() -> IPStringRangeIterator {
-        IPStringRangeIterator(self)
-    }
-}

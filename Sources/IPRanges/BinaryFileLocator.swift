@@ -1,5 +1,5 @@
 //
-//  IPRangesBinaryFileLocator.swift
+//  BinaryFileLocator.swift
 //  IPRanges
 //
 //  Created by Mac on 10/12/25.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-// MARK: IPRangesBinaryFileLocator
-class IPRangesBinaryFileLocator: LocatorProtocol {
+// MARK: BinaryFileLocator
+class BinaryFileLocator: LocatorProtocol {
     private var subdivs: [Substring] = []
     private var fileHandle: FileHandle = .nullDevice
     private var fileSize: UInt64 = 0

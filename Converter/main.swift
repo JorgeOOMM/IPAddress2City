@@ -29,14 +29,14 @@ struct Converter: ParsableCommand {
     fileprivate var defaultDirectory: URL {
         return URL.currentDirectory()
     }
-    // Default input file is default input file directory \\IP-COUNTRY.csv
+    // Default input file is in default input directory
     fileprivate var inputFile: URL {
         guard let input = input else {
             return defaultDirectory.appendingPathComponent("IP-COUNTRY.csv")
         }
         return URL(fileURLWithPath: input)
     }
-    // Default output directory is the same of the input
+    // Default output directory is the same of the input file
     fileprivate var outputDirectory: URL {
         guard let output = output else {
             return inputFile.deletingLastPathComponent()

@@ -7,6 +7,6 @@
 
 extension Dictionary where Value: Equatable {
     func key(from value: Value) -> Key? {
-        first(where: { $1 == value })?.key
+        first { $1 == value }?.key
     }
 }

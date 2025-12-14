@@ -58,6 +58,7 @@
 				IPRanges/DataFile.swift,
 				"IPRanges/FileManager+Extension.swift",
 				IPRanges/IPAddressConverter.swift,
+				IPRanges/IPStringRangeCollection.swift,
 				IPRanges/Model.swift,
 				IPRanges/Protocols.swift,
 				"IPRanges/String+Slice.swift",

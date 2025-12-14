@@ -244,12 +244,17 @@ let listAddress: [String] = [
     "95.188.64.220",
     "97.74.81.253"]
 
-
-struct AddressElement: Identifiable {
+struct AddressElement: Identifiable, Hashable {
     let id = UUID()
-    var address: String
-    var country: String
-    var flag: String
+    let address: String
+    let start: String
+    let end: String
+    let country: String
+    let flag: String
+    let subdiv: String
+    var locationName: String {
+        subdiv + " - " + country
+    }
 }
 
 // MARK: ContentView
@@ -257,13 +262,23 @@ extension ContentView {
     @Observable
     class ViewModel {
         internal var addresses: [AddressElement] = []
-        internal var addressRanges = AddressRanges( locator: IPAddressRangeLocator())
+        internal var addressRanges = AddressRanges(locator: IPAddressRangeLocator())
         
         init() {
             listAddress.forEach { address in
                 if let country = country(for: address),
-                   let flag = flag(for: address) {
-                    let item = AddressElement(address: address, country:country, flag:flag)
+                   let flag = flag(for: address),
+                   let start = start(for: address),
+                   let end = end(for: address),
+                   let subdiv = subdivision(for: address) {
+                    let item = AddressElement(
+                        address: address,
+                        start: start,
+                        end: end,
+                        country: country,
+                        flag: flag,
+                        subdiv: subdiv
+                    )
                     addresses.append(item)
                 }
             }

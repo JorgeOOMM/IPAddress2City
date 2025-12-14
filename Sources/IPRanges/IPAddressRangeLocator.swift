@@ -16,7 +16,7 @@ import Foundation
 class IPAddressRangeLocator: IPAddressConverterBE {
     private var locator: LocatorProtocol
     
-    init(locator: LocatorProtocol = IPRangesBinaryFileLocator()) {
+    init(locator: LocatorProtocol = BinaryFileLocator()) {
         
         // Initialize the LocatorProtocol interface
         self.locator = locator
@@ -38,12 +38,12 @@ protocol AddressPrintable {
 
 // MARK: IPAddressRangeLocator
 extension IPAddressRangeLocator: AddressPrintable {
-     func printAddress(for address: String) {
+    func printAddress(for address: String) {
         
         print("Printing range record for: \(address)")
         
         guard let addressUInt32 = stringIPToIPNumber(string: address),
-                let location = locate(from: UInt32(bigEndian: addressUInt32)) else {
+              let location = locate(from: UInt32(bigEndian: addressUInt32)) else {
             return
         }
         
@@ -95,12 +95,12 @@ extension IPAddressRangeLocator: LocatorProtocol {
     /// - Returns: Bool
     ///
     func load() -> Bool {
-       // Copy the bundle resouces needed
-       if( copyResourcesIfNeeded(fileName: "IP-COUNTRY", withExtension: "bin") &&
-           copyResourcesIfNeeded(fileName: "COUNTRY-SUBDIVS", withExtension: "bin")) {
-           // Load the locator
-           return self.locator.load()
-       }
+        // Copy the bundle resouces needed
+        if copyResourcesIfNeeded(fileName: "IP-COUNTRY", withExtension: "bin") &&
+            copyResourcesIfNeeded(fileName: "COUNTRY-SUBDIVS", withExtension: "bin") {
+            // Load the locator
+            return self.locator.load()
+        }
         return true
     }
 }

@@ -8,11 +8,11 @@
 
 import Foundation
 
-//MARK: IPAddressGenerator
+// MARK: IPAddressGenerator
 protocol IPAddressGenerator {
     func range(lower: String, upper: String) -> [String]
 }
-//MARK: IPAddressRange
+// MARK: IPAddressRange
 class IPAddressRange: IPAddressConverterLE, IPAddressGenerator {
     func range(lower: String, upper: String) -> [String] {
         guard !(lower.isEmpty || upper.isEmpty) else {

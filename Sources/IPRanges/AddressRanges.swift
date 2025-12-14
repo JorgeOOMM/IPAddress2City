@@ -77,10 +77,10 @@ extension AddressRanges {
 
 extension AddressRanges {
     func start(with range: IPRange) -> String {
-        locator.numberIPToStringIP(number: range.start)
+        locator.numberIPToStringIP(number: UInt32(bigEndian: range.start))
     }
     func end(with range: IPRange) -> String {
-        locator.numberIPToStringIP(number: range.end)
+        locator.numberIPToStringIP(number: UInt32(bigEndian: range.end))
     }
     func country(with range: IPRange) -> String {
         guard let country = Countries.shared.names[range.alpha2] else {
