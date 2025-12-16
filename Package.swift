@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "GeolocationLookup",
-    platforms: [.iOS(.v13.4), .macOS(.v10_14), .watchOS(.v5), .tvOS(.v12)],
+    platforms: [.iOS(.v13_4), .macOS(.v10_14), .watchOS(.v5), .tvOS(.v12)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
