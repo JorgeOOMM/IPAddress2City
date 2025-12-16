@@ -28,5 +28,7 @@ Create the GeoCoordinateLookup object for geo coordinate a location geo located 
 > let coordinateLookup = GeoCoordinateLookup()
 > 
 > let locationName = location.subdiv + " - " + location.country
+> 
 > let coordinate = try await coordinateLookup.location(with: locationName)
+> 
 > print("\(coordinate.name) at longitude:\(coordinate.longitude), latitude:\(coordinate.latitude)")
