@@ -1,8 +1,8 @@
 AddressLookup library
 
-This library geolocate a internet IP address
+This library geo locate and geo coordinate a internet IP address
 
-Create the object
+Create the IPAddressGeolocationLookup object for geo locate IP address
 
 > let lookup = IPAddressGeolocationLookup()
 
@@ -22,3 +22,11 @@ Print a geo location from a IP address string.
 
 >Printing geo location record for: 102.130.125.86
 >102.130.114.0 102.130.126.255 South Africa 🇿🇦 Cape Town (Manenberg) - Western Cape
+
+Create the GeoCoordinateLookup object for geo coordinate a location geo located from a IP address
+
+> let coordinateLookup = GeoCoordinateLookup()
+> 
+> let locationName = location.subdiv + " - " + location.country
+> let coordinate = try await coordinateLookup.location(with: locationName)
+> print("\(coordinate.name) at longitude:\(coordinate.longitude), latitude:\(coordinate.latitude)")
